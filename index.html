@@ -18,7 +18,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
       <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
 
-<script src="/bower_components/material-design-lite/material.min.js"></script>
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   </head>
   <body>
@@ -210,155 +210,158 @@
     <script src="scripts/plugins.js"></script>
 
     <script src="scripts/main.js"></script>
-  </body>
-  <script id="lanTemplate" type="text/x-handlebars-template">
-  {{#each lan}}
-<tr>
-	<td id="{{id}}">{{namn}}</td>
-	<td>{{antal_ledigajobb}}</td>
-</tr>
-	{{/each}}
-</script>
 
 
-<script id="kommunTemplate" type="text/x-handlebars-template">
-  {{#each kommun}}
-<tr>
-	<td id="{{id}}">{{namn}}</td>
-	<td>{{antal_ledigajobb}}</td>
-</tr>
-	{{/each}}
-</script>
-
-<script id="areaAdsTemplate" type="text/x-handlebars-template">
-  {{#each areaAdd}}
-<tr>
-	<td id="{{annonsid}}">{{annonsrubrik}}</td>
-	<td>{{arbetsplatsnamn}}</td>
-</tr>
-
-	{{/each}}
-</script>
-
-	<script id="profTemplate" type="text/x-handlebars-template">
-	  {{#each prof}}
-	<tr>
-		<td id="{{id}}">{{namn}}</td>
-		<td>{{antal_ledigajobb}}</td>
-	</tr>
-		{{/each}}
-	</script>
-
-	<script id="yrkesgrupperTemplate" type="text/x-handlebars-template">
-	  {{#each yrkesgrupp}}
-	<tr>
-		<td id="{{id}}">{{namn}}</td>
-		<td>{{antal_ledigajobb}}</td>
-	</tr>
-		{{/each}}
-	</script>
-
-	<script id="yrkesAdsTemplate" type="text/x-handlebars-template">
-
-    <table id="yrkesannons2" name="yrkesannons2" class="table table-striped table-hover">
-
-            <tbody id="yrkesAdsTempl">
-
-              {{#each yrkesAdd}}
-          	<tr>
-          		<td id="{{annonsid}}">{{annonsrubrik}}</td>
-
-          		<td>{{arbetsplatsnamn}}</td>
-          	</tr>
-          		{{/each}}
-            </tbody>
-      </table>
-
-	</script>
-	<script id="adTemplate" type="text/x-handlebars-template">
-<!-- <div class="board">
-  <div class="board-inner">
-    <p>{{yrkesbenamning}}</p>
-		<h3>{{annonsrubrik}}</h3>
-
-		<img src="{{logo}}" onerror="myFunction(this)"/>
-
-		<h3><small>{{trimDate publiceraddatum}}</small></h3>
-		<p>{{trimString annonstext}}</p>
-		<p><a href="{{platsannonsUrl}}">Se annonsen!</a></p>
-</div>
-</div> -->
-<div class="demo-card-wide mdl-card mdl-shadow--2dp">
-  <img src="{{logo}}" onerror="myFunction(this)" style="float: right; max-width: 100px"/>
-  <div class="mdl-card__title">
-    <h2 class="mdl-card__title-text" style="color: black">{{yrkesbenamning}}</h2>
-
-  </div>
-  <div class="mdl-card__supporting-text">
-  {{trimString annonstext}}
-  </div>
-  <div class="mdl-card__actions mdl-card--border">
-    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{platsannonsUrl}}">Se annons!</a>
-
-  </div>
-  <div class="mdl-card__actions mdl-card--border">
-    <a class="mdl-button mdl-button- mdl-js-button mdl-js-ripple-effect">Publicerades på ams.se {{trimDate publiceraddatum}}</a>
-  </div>
-  <div class="mdl-card__menu">
-    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-      <i class="material-icons">share</i>
-    </button>
-
-  </div>
-</div>
-	</script>
-
-	<script id="feedTemplate" type="text/x-handlebars-template">
-
-		 <div class="text">
-				<a href="#" id="{{id}}" class="lastestView">{{rubrik}}</a>
-		</div>
-		<div class="time pull-left">
-				{{kommun}}
-		</div>
-		<div class="time pull-right">
-			<p class="text-success"> {{day}} {{trimDate time}}</p>
-		</div><br>
-
-    <!-- <div class="card col-xs-2">
-  <div class="card-header">
-    {{rubrik}}
-  </div>
-  <div class="card-block">
-    <h4 class="card-title">Special title treatment</h4>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div> -->
-
-	</script>
-  <script id="wordFeedTemplate" type="text/x-handlebars-template">
-
-     <div class="text">
-        <a href="#" id="{{id}}" class="lastestView">{{string}}</a>
-    </div>
-    <div class="time pull-left">
-        {{hits}} träffar den {{timestamp}}
-    </div>
-    <div class="time pull-right">
-      <p class="text-success"> {{day}} {{trimDate time}}</p>
-    </div><br>
-
-    <!-- <div class="card col-xs-2">
-  <div class="card-header">
-    {{rubrik}}
-  </div>
-  <div class="card-block">
-    <h4 class="card-title">Special title treatment</h4>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div> -->
-
+    <script id="lanTemplate" type="text/x-handlebars-template">
+    {{#each lan}}
+  <tr>
+    <td id="{{id}}">{{namn}}</td>
+    <td>{{antal_ledigajobb}}</td>
+  </tr>
+    {{/each}}
   </script>
+
+
+  <script id="kommunTemplate" type="text/x-handlebars-template">
+    {{#each kommun}}
+  <tr>
+    <td id="{{id}}">{{namn}}</td>
+    <td>{{antal_ledigajobb}}</td>
+  </tr>
+    {{/each}}
+  </script>
+
+  <script id="areaAdsTemplate" type="text/x-handlebars-template">
+    {{#each areaAdd}}
+  <tr>
+    <td id="{{annonsid}}">{{annonsrubrik}}</td>
+    <td>{{arbetsplatsnamn}}</td>
+  </tr>
+
+    {{/each}}
+  </script>
+
+    <script id="profTemplate" type="text/x-handlebars-template">
+      {{#each prof}}
+    <tr>
+      <td id="{{id}}">{{namn}}</td>
+      <td>{{antal_ledigajobb}}</td>
+    </tr>
+      {{/each}}
+    </script>
+
+    <script id="yrkesgrupperTemplate" type="text/x-handlebars-template">
+      {{#each yrkesgrupp}}
+    <tr>
+      <td id="{{id}}">{{namn}}</td>
+      <td>{{antal_ledigajobb}}</td>
+    </tr>
+      {{/each}}
+    </script>
+
+    <script id="yrkesAdsTemplate" type="text/x-handlebars-template">
+
+      <table id="yrkesannons2" name="yrkesannons2" class="table table-striped table-hover">
+
+              <tbody id="yrkesAdsTempl">
+
+                {{#each yrkesAdd}}
+              <tr>
+                <td id="{{annonsid}}">{{annonsrubrik}}</td>
+
+                <td>{{arbetsplatsnamn}}</td>
+              </tr>
+                {{/each}}
+              </tbody>
+        </table>
+
+    </script>
+    <script id="adTemplate" type="text/x-handlebars-template">
+  <!-- <div class="board">
+    <div class="board-inner">
+      <p>{{yrkesbenamning}}</p>
+      <h3>{{annonsrubrik}}</h3>
+
+      <img src="{{logo}}" onerror="myFunction(this)"/>
+
+      <h3><small>{{trimDate publiceraddatum}}</small></h3>
+      <p>{{trimString annonstext}}</p>
+      <p><a href="{{platsannonsUrl}}">Se annonsen!</a></p>
+  </div>
+  </div> -->
+  <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+    <img src="{{logo}}" onerror="myFunction(this)" style="float: right; max-width: 100px"/>
+    <div class="mdl-card__title">
+      <h2 class="mdl-card__title-text" style="color: black">{{yrkesbenamning}}</h2>
+
+    </div>
+    <div class="mdl-card__supporting-text">
+    {{trimString annonstext}}
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{platsannonsUrl}}">Se annons!</a>
+
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+      <a class="mdl-button mdl-button- mdl-js-button mdl-js-ripple-effect">Publicerades på ams.se {{trimDate publiceraddatum}}</a>
+    </div>
+    <div class="mdl-card__menu">
+      <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+        <i class="material-icons">share</i>
+      </button>
+
+    </div>
+  </div>
+    </script>
+
+    <script id="feedTemplate" type="text/x-handlebars-template">
+
+       <div class="text">
+          <a href="#" id="{{id}}" class="lastestView">{{rubrik}}</a>
+      </div>
+      <div class="time pull-left">
+          {{kommun}}
+      </div>
+      <div class="time pull-right">
+        <p class="text-success"> {{day}} {{trimDate time}}</p>
+      </div><br>
+
+      <!-- <div class="card col-xs-2">
+    <div class="card-header">
+      {{rubrik}}
+    </div>
+    <div class="card-block">
+      <h4 class="card-title">Special title treatment</h4>
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div> -->
+
+    </script>
+    <script id="wordFeedTemplate" type="text/x-handlebars-template">
+
+       <div class="text">
+          <a href="#" id="{{id}}" class="lastestView">{{string}}</a>
+      </div>
+      <div class="time pull-left">
+          {{hits}} träffar den {{timestamp}}
+      </div>
+      <div class="time pull-right">
+        <p class="text-success"> {{day}} {{trimDate time}}</p>
+      </div><br>
+
+      <!-- <div class="card col-xs-2">
+    <div class="card-header">
+      {{rubrik}}
+    </div>
+    <div class="card-block">
+      <h4 class="card-title">Special title treatment</h4>
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div> -->
+
+    </script>
+  </body>
+
 </html>
