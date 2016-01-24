@@ -1,5 +1,5 @@
-'use strict'
 
+'use strict'
 // import $ from 'jquery';
 
 const ROOT_URL = "http://robs-cors-server.herokuapp.com/http://api.arbetsformedlingen.se/af/v0/platsannonser/soklista/";
