@@ -1,16 +1,16 @@
 
-'use strict'
+'use strict';
 // import $ from 'jquery';
 
-const ROOT_URL = "http://robs-cors-server.herokuapp.com/http://api.arbetsformedlingen.se/af/v0/platsannonser/soklista/";
-const AREA_URL = "http://robs-cors-server.herokuapp.com/http://api.arbetsformedlingen.se/af/v0/platsannonser/soklista/lan";
-const PROF_URL = "http://robs-cors-server.herokuapp.com/http://api.arbetsformedlingen.se/af/v0/platsannonser/soklista/yrkesgrupper?yrkesomradeid=3";
-const KOMMUN_URL = "http://robs-cors-server.herokuapp.com/http://api.arbetsformedlingen.se/af/v0/platsannonser/soklista/kommuner?lanid=";
-const YRKES_IN_AREA = "http://robs-cors-server.herokuapp.com/http://api.arbetsformedlingen.se/af/v0/platsannonser/matchning?kommunid=";
-const GET_ADD = "https://cors-anywhere.herokuapp.com/http://api.arbetsformedlingen.se/af/v0/platsannonser/";
-const GET_LOGO = "http://api.arbetsformedlingen.se/af/v0/platsannonser/";
-const BYPROF_URL = "http://robs-cors-server.herokuapp.com/http://api.arbetsformedlingen.se/af/v0/platsannonser/matchning?yrkesid=";
-const TEXT_URL = "http://robs-cors-server.herokuapp.com/http://api.arbetsformedlingen.se/af/v0/platsannonser/matchning?nyckelord=";
+var ROOT_URL = "http://robs-cors-server.herokuapp.com/http://api.arbetsformedlingen.se/af/v0/platsannonser/soklista/";
+var AREA_URL = "http://robs-cors-server.herokuapp.com/http://api.arbetsformedlingen.se/af/v0/platsannonser/soklista/lan";
+var PROF_URL = "http://robs-cors-server.herokuapp.com/http://api.arbetsformedlingen.se/af/v0/platsannonser/soklista/yrkesgrupper?yrkesomradeid=3";
+var KOMMUN_URL = "http://robs-cors-server.herokuapp.com/http://api.arbetsformedlingen.se/af/v0/platsannonser/soklista/kommuner?lanid=";
+var YRKES_IN_AREA = "http://robs-cors-server.herokuapp.com/http://api.arbetsformedlingen.se/af/v0/platsannonser/matchning?kommunid=";
+var GET_ADD = "https://cors-anywhere.herokuapp.com/http://api.arbetsformedlingen.se/af/v0/platsannonser/";
+var GET_LOGO = "http://api.arbetsformedlingen.se/af/v0/platsannonser/";
+var BYPROF_URL = "http://robs-cors-server.herokuapp.com/http://api.arbetsformedlingen.se/af/v0/platsannonser/matchning?yrkesid=";
+var TEXT_URL = "http://robs-cors-server.herokuapp.com/http://api.arbetsformedlingen.se/af/v0/platsannonser/matchning?nyckelord=";
 var myFirebaseRef = new Firebase("https://jobbapi.firebaseio.com/");
 
 
