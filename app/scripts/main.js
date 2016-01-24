@@ -40,7 +40,7 @@ $(document).ready(function() {
 
   $('#textInputBtn').on('click',function(){
   window.$('#myTab li:eq(2) a').tab('show');
-    let searchStr = $('#textInput').val();
+    var searchStr = $('#textInput').val();
    callTestApi(TEXT_URL + searchStr, "srcStr");
   });
 $('#byArea, #byJob').addClass('hidden');
