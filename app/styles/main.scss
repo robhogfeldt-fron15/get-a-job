@@ -361,8 +361,9 @@ left: 35%;
 }
 .mdl-spinner{
   display: none;
-  width: 150px;
-  height:150px;
+  margin: 0 auto;
+  width: 100px;
+  height:100px;
 }
 
 .realTime{
@@ -382,4 +383,9 @@ width: 100%;
 
 .footer {
   margin-top: 40px;
+}
+#info-panel{
+  background-color: whitesmoke;
+  margin-left: 20px;
+  height: 300px;
 }

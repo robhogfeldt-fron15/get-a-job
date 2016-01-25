@@ -12,6 +12,7 @@
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="/bower_components/material-design-lite/material.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -20,15 +21,18 @@
     <!-- endbuild -->
 
     <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="/bower_components/material-design-lite/material.min.js"></script>
     <script src="/bower_components/modernizr/modernizr.js"></script>
 
+
     <!-- endbuild -->
-<script src="/bower_components/material-design-lite/material.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+
+
       <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
 
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
   </head>
   <body>
     <!--[if lt IE 10]>
@@ -71,21 +75,29 @@
     </div>
 </div>
 
-<div class="col-xs-4">
-  <div class="panel panel-default">
-           <div class="panel-heading"><h4>Info</h4></div>
-   			<div class="panel-body">
-              <!-- <img src="//placehold.it/150x150" class="img-circle pull-right"> <a href="#">Free @Bootply</a> -->
-              <div class="clearfix"></div>
-              Hitta IT-relaterade jobb och bli uppdaterad i realtid när någon tittar på en annons eller skriver ett sökord.
-              <hr>
-                <ul class="list-unstyled"><li><a href="">jQuery AJAX</a></li><li><a href="">Handlebars</a></li><li><a href="">Firebase</a></li></ul>
-              <nav class="pull-right">
-          <a href="https://github.com/ntkme/github-buttons"><span class="hidden-xs"> View on GitHub </span><span class="fa fa-github" aria-hidden="true"></span></a>
-        </nav>
+<div id="info-panel" class="col-xs-3">
+  <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+  <div class="mdl-tabs__tab-bar">
+  <a href="" class="mdl-tabs__tab is-active">Info</a>
 
-            </div>
-         </div>
+
+  </div>
+
+  <div class="mdl-tabs__panel is-active" id="latest-panel">
+    <div class="clearfix"></div>
+    Hitta IT-relaterade jobb och bli uppdaterad i realtid när någon tittar på en annons eller skriver ett sökord.
+    <hr>
+      <ul class="list-unstyled"><li><a href="">jQuery AJAX</a></li><li><a href="">Handlebars</a></li><li><a href="">Firebase</a></li></ul>
+    <nav class="pull-right">
+  <a href="https://github.com/ntkme/github-buttons"><span class="hidden-xs"> View on GitHub </span><span class="fa fa-github" aria-hidden="true"></span></a>
+  </div>
+  <div class="mdl-tabs__panel" id="word-panel">
+  <div class="col-xs-12" id="wordFeedTempl">
+
+  </div>
+  </div>
+
+  </div>
 </div>
 
 <hr>
@@ -129,14 +141,14 @@
 
                      <div class="tab-content">
                       <div class="tab-pane fade active in" id="home">
-
+<div class="mdl-spinner mdl-js-spinner is-active"></div>
                           <h3 class="head text-center">Sök på område<sup>™</sup> <span style="color:#f48260;">♥</span></h3>
 
 
 														<table id="lan" name="lan" class="table table-striped table-hover">
 
 													 	 <tbody id="lanTempl">
-<!-- <div class="mdl-spinner mdl-js-spinner is-active" style="width: 150px; height:150px"></div> -->
+
 														 </tbody>
 													  </table>
 
@@ -147,8 +159,9 @@
                 </p>
                       </div>
                       <div class="tab-pane fade" id="profile">
+                        <div  class="mdl-spinner mdl-js-spinner is-active"></div>
                           <h3 class="head text-center">Välj kommun<sup>™</sup></h3>
-                          <div id="kommunSpin" class="mdl-spinner mdl-js-spinner is-active"></div>
+
 
 														<table id="kommuner" name="kommuner" class="table table-striped table-hover">
 						 						 		<tbody id="kommunTempl">
@@ -164,6 +177,7 @@
 
                       </div>
                       <div class="tab-pane fade" id="messages">
+                        <div  class="mdl-spinner mdl-js-spinner is-active"></div>
                           <h3 class="head text-center">Get a job<sup>™</sup></h3>
 
 														<table id="yrkesannons" name="yrkesannons" class="table table-striped table-hover">
@@ -344,7 +358,7 @@
     </script>
 
     <script id="feedTemplate" type="text/x-handlebars-template">
-
+<div class="childWrap">
        <div class="text">
           <a href="#" id="{{id}}" class="lastestView">{{rubrik}}</a>
       </div>
@@ -354,17 +368,8 @@
       <div class="time pull-right">
         <p class="text-success"> {{day}} {{trimDate time}}</p>
       </div><br>
+</div>
 
-      <!-- <div class="card col-xs-2">
-    <div class="card-header">
-      {{rubrik}}
-    </div>
-    <div class="card-block">
-      <h4 class="card-title">Special title treatment</h4>
-      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div> -->
 
     </script>
     <script id="wordFeedTemplate" type="text/x-handlebars-template">
@@ -373,24 +378,15 @@
           <a href="#" id="{{id}}" class="lastestView">{{string}}</a>
       </div>
       <div class="time pull-left">
-          {{hits}} träffar den {{timestamp}}
+          {{hits}}+ träffar
       </div>
       <div class="time pull-right">
         <p class="text-success"> {{day}} {{trimDate time}}</p>
       </div><br>
 
-      <!-- <div class="card col-xs-2">
-    <div class="card-header">
-      {{rubrik}}
-    </div>
-    <div class="card-block">
-      <h4 class="card-title">Special title treatment</h4>
-      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div> -->
 
     </script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
   </body>
 
 </html>
