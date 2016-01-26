@@ -1,7 +1,7 @@
 
 "use strict";
 /*eslint no-use-before-define: [2, "nofunc"]*/
-/*global Firebase, $, Handlebars, window, document, console*/
+/*global Firebase, $, Handlebars, window, document, console, alert*/
 
 
 var ROOT_URL = "http://robs-cors-server.herokuapp.com/http://api.arbetsformedlingen.se/af/v0/platsannonser/soklista/";
@@ -19,7 +19,7 @@ var myFirebaseRef = new Firebase("https://jobbapi.firebaseio.com/");
 $(document).ready(function() {
 
   var ref = new Firebase("https://jobbapi.firebaseio.com/latest");
-  ref.orderByChild("timestamp").limitToLast(5).on("child_added", function(snapshot) {
+  ref.orderByChild("timestamp").limitToLast(4).on("child_added", function(snapshot) {
 
     var snap = snapshot.val();
 
@@ -277,7 +277,7 @@ data.logo = GET_LOGO + data.id + "/logotyp";
 
 //DISPLAY LATEST FIVE
 var count = $("#feedTempl div.childWrap").length;
-if (count > 5) {$("#feedTempl div:last-child").remove();
+if (count > 4) {$("#feedTempl div:last-child").remove();
   var $newRow = $("#feedTempl div:first-child");
   $newRow.effect("highlight", {}, 3000);
   }
@@ -291,6 +291,16 @@ data.logo = GET_LOGO + data.id + "/logotyp";
   var theCompiledHtml = compiled(data);
   $("#wordFeedTempl").prepend(theCompiledHtml);
   $("#wordFeedTempl").fadeIn(1000);
+  var $label = $("<label>").text(" " + data.string + " ");
+  $label.css({backgroundColor: "#ddd", marginLeft: "10px", padding: "5px"});
+  $("#searchLabels").prepend($label);
+
+  //DISPLAY LATEST FIVE
+  var count = $("#searchLabels label").length;
+  if (count > 4) {$("#searchLabels label:last-child").remove();
+    var $newRow = $("#searchLabels label:first-child");
+    $newRow.effect("highlight", {}, 3000);
+    }
 }
 
 
@@ -322,7 +332,7 @@ switch (name) {
   renderAdd(data.platsannons.annons);
       break;
   case "fromLatest":
-  renderAddfromLatest(data.platsannons.annons, url, this.myFunction);
+  renderAddfromLatest(data.platsannons.annons, url, myFunction);
       break;
   case "srcStr":
   renderAddsByStr(data.matchningslista.matchningdata);
@@ -332,6 +342,7 @@ switch (name) {
       break;
   }
 };
+
 
 function callTestApi(url, name) {
   $(".mdl-spinner").addClass("show");
@@ -344,8 +355,11 @@ function callTestApi(url, name) {
           $(".mdl-spinner").removeClass("show");
        },
         error: function(err) {
-          console.log(err);
-        }
+         $(".mdl-spinner").removeClass("show");
+         alert("Hoppsan, det tog längre tid än väntat.\n Försök igen!");
+
+        },
+        timeout: 8000
     });
 }
 //Helpers

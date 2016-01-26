@@ -11,6 +11,7 @@ $icon-font-path: '../fonts/';
   padding: 0.2em 0;
 }
 
+
 //OLD
 /* Space out content a bit */
 // body {
@@ -133,6 +134,17 @@ tbody{
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
+  }
+
+  .realTime{
+    max-height: 200px;
+    margin-bottom: 150px;
+
+  }
+  .info{
+    max-height: 200px;
+    margin-bottom: 150px;
+
   }
 }
 
@@ -292,7 +304,7 @@ li.active:after {
 .nav-tabs > li a{
    width: 40px;
    height: 40px;
-   margin: 20px auto;
+   margin: 5px auto;
    border-radius: 100%;
    padding: 0;
 }
@@ -329,16 +341,25 @@ padding-top: 5px;
 
 
 @media( max-width : 585px ){
+.childWrap{
+float: left;
+margin-bottom: 20px;
+}
 
+#searchLabels{
+  font-size: 9px;
+}
     .board {
-width: 90%;
+
 height:auto !important;
 }
     span.round-tabs {
         font-size:16px;
-width: 50px;
-height: 50px;
-line-height: 50px;
+width: 30px;
+height: 30px;
+line-height: 30px;
+
+
     }
     .tab-content .head{
         font-size:20px;
@@ -358,6 +379,16 @@ left: 35%;
 .btn-outline-rounded {
     padding:12px 20px;
     }
+
+
+
+
+    .realTime{
+
+    margin-bottom: 50px;
+    overflow: scroll;
+    }
+
 }
 .mdl-spinner{
   display: none;
@@ -366,12 +397,26 @@ left: 35%;
   height:100px;
 }
 
-.realTime{
-  height: 300px;
-  background-color: white;
+#info-panel{
+  padding-top: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
 }
 #feedTempl{
-  margin-top: 20px;
+  padding-top: 15px;
+  background-color: white;
+}
+
+#wordFeedTempl{
+  padding-top: 15px;
+  background-color: white;
+
+}
+#latestSrc{
+  color: white;
+  font-size: 12px;
 }
 a.is-active {
   color: white;
@@ -384,8 +429,25 @@ width: 100%;
 .footer {
   margin-top: 40px;
 }
-#info-panel{
-  background-color: whitesmoke;
-  margin-left: 20px;
+
+.realTime, .info .area{
   height: 300px;
+}
+.area{
+  // margin-top: 20px;
+}
+.text-muted{
+color: white;
+}
+#weaponsWrap{
+  text-align: center;
+}
+.weapons{
+  padding-left: 0;
+
+}
+.weapons li{
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 16px;
 }
